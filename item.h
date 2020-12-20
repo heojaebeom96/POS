@@ -3,16 +3,15 @@
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
-#include <typeinfo>
 
 using namespace std;
 
-class ItemData	// »óÇ°Á¤º¸ Å¬·¡½º
+class ItemData	// ìƒí’ˆì •ë³´ í´ë˜ìŠ¤
 {
 protected:
-    string item_n, category_n, option;	// item_n: »óÇ°ÀÌ¸§, category_n: Ä«Å×°í¸® ÀÌ¸§, option: ÀÌº¥Æ®
+    string item_n, category_n, option;	// item_n: ìƒí’ˆì´ë¦„, category_n: ì¹´í…Œê³ ë¦¬ ì´ë¦„, option: ì´ë²¤íŠ¸
     int item_p, item_a, safe = 100000, cash = 0, card = 0, month, day;
-    // item_p: »óÇ°°¡°İ, item_a: »óÇ°Àç°í, safe: ±İ°í, cash: Çö±İ, card: Ä«µå, month: ÇØ´ç ¿ù, day: ÇØ´ç ÀÏ
+    // item_p: ìƒí’ˆê°€ê²©, item_a: ìƒí’ˆì¬ê³ , safe: ê¸ˆê³ , cash: í˜„ê¸ˆ, card: ì¹´ë“œ, month: í•´ë‹¹ ì›”, day: í•´ë‹¹ ì¼
 public:
     // setter&getter
     void setItem_n(string n);
