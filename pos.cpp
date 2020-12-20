@@ -6,7 +6,6 @@
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
-#include <typeinfo>
 #include "item.h"
 #include "extitem.h"
 
