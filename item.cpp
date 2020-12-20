@@ -3,7 +3,6 @@
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
-#include <typeinfo>
 #include "item.h"
 
 using namespace std;
@@ -83,28 +82,28 @@ void Manager:: addItemType() {
     {
         while (true)
         {
-            cout << "ƒ´≈◊∞Ì∏Æ πËø≠ ≈©±‚ : ";
+            cout << "Ïπ¥ÌÖåÍ≥†Î¶¨ Î∞∞Ïó¥ ÌÅ¨Í∏∞ : ";
             cin >> size;
             if (size > 0)
             {
                 category = new Manager[size];
-                cout << "ƒ´≈◊∞Ì∏Æ πËø≠¿Ã ª˝º∫µ«æ˙Ω¿¥œ¥Ÿ.\n";
+                cout << "Ïπ¥ÌÖåÍ≥†Î¶¨ Î∞∞Ïó¥Ïù¥ ÏÉùÏÑ±ÎêòÏóàÏäµÎãàÎã§.\n";
                 break;
             }
             else
             {
                 cin.clear();
                 cin.ignore(1000, '\n');
-                cout << "0 ¿ÃªÛ¿« ºˆ∏¶ ¿‘∑¬«ÿ¡÷ººø‰.\n";
+                cout << "0 Ïù¥ÏÉÅÏùò ÏàòÎ•º ÏûÖÎ†•Ìï¥Ï£ºÏÑ∏Ïöî.\n";
             }
         }
     }
     if ((category_c != 0) && (size - category_c == 0))
     {
-        cout << "¥ı ¿ÃªÛ ƒ´≈◊∞Ì∏Æ∏¶ √ﬂ∞°«“ ºˆ æ¯Ω¿¥œ¥Ÿ.\n" << endl;
+        cout << "Îçî Ïù¥ÏÉÅ Ïπ¥ÌÖåÍ≥†Î¶¨Î•º Ï∂îÍ∞ÄÌï† Ïàò ÏóÜÏäµÎãàÎã§.\n" << endl;
         return;
     }
-    cout << "ƒ´≈◊∞Ì∏Æ : ";
+    cout << "Ïπ¥ÌÖåÍ≥†Î¶¨ : ";
     string name;
     cin >> name;
     bool tf = true;
@@ -112,7 +111,7 @@ void Manager:: addItemType() {
     {
         if (category[i].category_n == name)
         {
-            cout << "¡ﬂ∫πµ» ƒ´≈◊∞Ì∏Æ¿‘¥œ¥Ÿ.\n" << endl;
+            cout << "Ï§ëÎ≥µÎêú Ïπ¥ÌÖåÍ≥†Î¶¨ÏûÖÎãàÎã§.\n" << endl;
             tf = false;
             break;
         }
@@ -120,40 +119,40 @@ void Manager:: addItemType() {
     if (tf == true)
     {
         category[category_c].category_n = name;
-        category[category_c].head = category[category_c].tail = nullptr;    // head, tail √ ±‚»≠
-        cout << category[category_c].category_n << " ƒ´≈◊∞Ì∏Æ µÓ∑œµ«æ˙Ω¿¥œ¥Ÿ.\n" << endl;
-        category_c++;   // ¥Ÿ¿Ω ƒ´µ•∞Ì∏Æ∞° µÈæÓ∞• ¿⁄∏Æ¿ß«ÿ «œ≥™ ¡ı∞°
+        category[category_c].head = category[category_c].tail = nullptr;    // head, tail Ï¥àÍ∏∞Ìôî
+        cout << category[category_c].category_n << " Ïπ¥ÌÖåÍ≥†Î¶¨ Îì±Î°ùÎêòÏóàÏäµÎãàÎã§.\n" << endl;
+        category_c++;   // Îã§Ïùå Ïπ¥Îç∞Í≥†Î¶¨Í∞Ä Îì§Ïñ¥Í∞à ÏûêÎ¶¨ÏúÑÌï¥ ÌïòÎÇò Ï¶ùÍ∞Ä
     }
 }
 void Manager::add() {
-    cout << "ªÛ«∞¿ª µÓ∑œ«’¥œ¥Ÿ.\n∏’¿˙ ƒ´≈◊∞Ì∏Æ∏¶ ¿‘∑¬«œΩ Ω√ø¿. ";
+    cout << "ÏÉÅÌíàÏùÑ Îì±Î°ùÌï©ÎãàÎã§.\nÎ®ºÏ†Ä Ïπ¥ÌÖåÍ≥†Î¶¨Î•º ÏûÖÎ†•ÌïòÏã≠ÏãúÏò§. ";
     string c_name;
     cin >> c_name;
     for (int i = 0; i < category_c; i++)
     {
         if (category[i].category_n == c_name)
         {
-            cout << c_name << " ƒ´≈◊∞Ì∏Æø° æÓ∂≤ ªÛ«∞¿ª µÓ∑œ«œΩ√∞⁄Ω¿¥œ±Ó?\n";
-            cout << "¿Ã∏ß : ";
+            cout << c_name << " Ïπ¥ÌÖåÍ≥†Î¶¨Ïóê Ïñ¥Îñ§ ÏÉÅÌíàÏùÑ Îì±Î°ùÌïòÏãúÍ≤†ÏäµÎãàÍπå?\n";
+            cout << "Ïù¥Î¶Ñ : ";
             string name;
             cin >> name;
-            ItemNode* ptr = category[i].head;    // ƒ´≈◊∞Ì∏Æ ≥ªø°º≠ ∞∞¿∫ ¿Ã∏ß¿« ªÛ«∞¿ª √£±‚ ¿ß«— ∆˜¿Œ≈Õ ∫Øºˆ
-            while (ptr != nullptr)  // ªÛ«∞ ¿Ã∏ß¿Ã ∞∞¿∫ ∞Õ¿Ã ¿÷¥¬¡ˆ »Æ¿Œ«ÿ¡÷¥¬ ¿€æ˜
+            ItemNode* ptr = category[i].head;    // Ïπ¥ÌÖåÍ≥†Î¶¨ ÎÇ¥ÏóêÏÑú Í∞ôÏùÄ Ïù¥Î¶ÑÏùò ÏÉÅÌíàÏùÑ Ï∞æÍ∏∞ ÏúÑÌïú Ìè¨Ïù∏ÌÑ∞ Î≥ÄÏàò
+            while (ptr != nullptr)  // ÏÉÅÌíà Ïù¥Î¶ÑÏù¥ Í∞ôÏùÄ Í≤ÉÏù¥ ÏûàÎäîÏßÄ ÌôïÏù∏Ìï¥Ï£ºÎäî ÏûëÏóÖ
             {
                 if (ptr->data->getItem_n() == name)
                     break;
                 ptr = ptr->next;
             }
-            // ¥Ÿ∏¶ ∞ÊøÏ ∞°∞›∞˙ ¿Ã∫•∆Æ∏¶ ¡¶Ω√, ∞∞¿ª ∞ÊøÏ ¡¶Ω√ æ»«‘
+            // Îã§Î•º Í≤ΩÏö∞ Í∞ÄÍ≤©Í≥º Ïù¥Î≤§Ìä∏Î•º Ï†úÏãú, Í∞ôÏùÑ Í≤ΩÏö∞ Ï†úÏãú ÏïàÌï®
             int amount;
-            if (ptr == nullptr) // ªÛ«∞¿Ã∏ß¿Ã ¥Ÿ∏¶ ∂ß
+            if (ptr == nullptr) // ÏÉÅÌíàÏù¥Î¶ÑÏù¥ Îã§Î•º Îïå
             {
                 Manager* node = new Manager;
                 node->data->setItem_n(name);
                 int price;
                 while (true)
                 {
-                    cout << "∞°∞›(ø¯) : ";
+                    cout << "Í∞ÄÍ≤©(Ïõê) : ";
                     cin >> price;
                     if (price > 0)
                     {
@@ -164,12 +163,12 @@ void Manager::add() {
                     {
                         cin.clear();
                         cin.ignore(1000, '\n');
-                        cout << "¡¶¥Î∑Œ ¿˚æÓ¡÷Ω√±Ê πŸ∂¯¥œ¥Ÿ.\n";    // ∞°∞›¿ª 0¿Ã«œ ∂«¥¬ πÆ¿⁄ø≠∑Œ «ﬂ¿ª Ω√ ø¿∑˘∏ﬁΩ√¡ˆ
+                        cout << "Ï†úÎåÄÎ°ú Ï†ÅÏñ¥Ï£ºÏãúÍ∏∏ Î∞îÎûçÎãàÎã§.\n";    // Í∞ÄÍ≤©ÏùÑ 0Ïù¥Ìïò ÎòêÎäî Î¨∏ÏûêÏó¥Î°ú ÌñàÏùÑ Ïãú Ïò§Î•òÎ©îÏãúÏßÄ
                     }
                 }
                 while (true)
                 {
-                    cout << "¿Á∞Ì(∞≥) : ";
+                    cout << "Ïû¨Í≥†(Í∞ú) : ";
                     cin >> amount;
                     if (amount > 0)
                     {
@@ -180,34 +179,34 @@ void Manager::add() {
                     {
                         cin.clear();
                         cin.ignore(1000, '\n');
-                        cout << "¡¶¥Î∑Œ ¿˚æÓ¡÷Ω√±Ê πŸ∂¯¥œ¥Ÿ.\n";    // ¿Á∞Ì∏¶ 0¿Ã«œ ∂«¥¬ πÆ¿⁄ø≠∑Œ «ﬂ¿ª Ω√ ø¿∑˘∏ﬁΩ√¡ˆ
+                        cout << "Ï†úÎåÄÎ°ú Ï†ÅÏñ¥Ï£ºÏãúÍ∏∏ Î∞îÎûçÎãàÎã§.\n";    // Ïû¨Í≥†Î•º 0Ïù¥Ìïò ÎòêÎäî Î¨∏ÏûêÏó¥Î°ú ÌñàÏùÑ Ïãú Ïò§Î•òÎ©îÏãúÏßÄ
                     }
                 }
-                if (c_name == "√ ƒ›∏¥" && i_data.getMonth() == 2 && i_data.getDay() == 14)
-                    node->data->setOption("πﬂ∑ª≈∏¿Œµ•¿Ã");
-                else if (c_name == "ªÁ≈¡" && i_data.getMonth() == 3 && i_data.getDay() == 14)
-                    node->data->setOption("»≠¿Ã∆Æµ•¿Ã");
-                else if (c_name == "ª©ª©∑Œ" && i_data.getMonth() == 11 && i_data.getDay() == 11)
-                    node->data->setOption("ª©ª©∑Œµ•¿Ã");
+                if (c_name == "Ï¥àÏΩúÎ¶ø" && i_data.getMonth() == 2 && i_data.getDay() == 14)
+                    node->data->setOption("Î∞úÎ†åÌÉÄÏù∏Îç∞Ïù¥");
+                else if (c_name == "ÏÇ¨ÌÉï" && i_data.getMonth() == 3 && i_data.getDay() == 14)
+                    node->data->setOption("ÌôîÏù¥Ìä∏Îç∞Ïù¥");
+                else if (c_name == "ÎπºÎπºÎ°ú" && i_data.getMonth() == 11 && i_data.getDay() == 11)
+                    node->data->setOption("ÎπºÎπºÎ°úÎç∞Ïù¥");
                 else
-                    node->data->setOption("æ¯¿Ω");
+                    node->data->setOption("ÏóÜÏùå");
                 node->next = nullptr;
-                if (category[i].head == nullptr)    // π∞«∞ ∏ÆΩ∫∆Æ∞° æ¯¥Ÿ∏È
+                if (category[i].head == nullptr)    // Î¨ºÌíà Î¶¨Ïä§Ìä∏Í∞Ä ÏóÜÎã§Î©¥
                     category[i].head = category[i].tail = node;
-                else    // ∏∂¡ˆ∏∑ ≥ÎµÂ∑Œ √ﬂ∞°
+                else    // ÎßàÏßÄÎßâ ÎÖ∏ÎìúÎ°ú Ï∂îÍ∞Ä
                 {
-                    category[i].tail->next = node;  // «ˆ¿Á ∏∂¡ˆ∏∑ ≥ÎµÂ¿« µ⁄ø° Ω≈±‘ ≥ÎµÂ √ﬂ∞°
-                    category[i].tail = node;   // tail ∆˜¿Œ≈Õ∏¶ µ⁄∑Œ ¿Ãµø
+                    category[i].tail->next = node;  // ÌòÑÏû¨ ÎßàÏßÄÎßâ ÎÖ∏ÎìúÏùò Îí§Ïóê Ïã†Í∑ú ÎÖ∏Îìú Ï∂îÍ∞Ä
+                    category[i].tail = node;   // tail Ìè¨Ïù∏ÌÑ∞Î•º Îí§Î°ú Ïù¥Îèô
                 }
-                cout << "¡§ªÛ¿˚¿∏∑Œ µÓ∑œµ«æ˙Ω¿¥œ¥Ÿ.\n" << endl;
+                cout << "Ï†ïÏÉÅÏ†ÅÏúºÎ°ú Îì±Î°ùÎêòÏóàÏäµÎãàÎã§.\n" << endl;
                 return;
             }
-            else    // ªÛ«∞¿Ã∏ß¿Ã ∞∞¿ª ∂ß
+            else    // ÏÉÅÌíàÏù¥Î¶ÑÏù¥ Í∞ôÏùÑ Îïå
             {
                 ptr->data->setItem_n(name);
                 while (true)
                 {
-                    cout << "¿Á∞Ì(∞≥) : ";
+                    cout << "Ïû¨Í≥†(Í∞ú) : ";
                     cin >> amount;
                     cin.ignore(1000, '\n');
                     if (amount > 0)
@@ -219,88 +218,88 @@ void Manager::add() {
                     {
                         cin.clear();
                         cin.ignore(1000, '\n');
-                        cout << "¡¶¥Î∑Œ ¿˚æÓ¡÷Ω√±Ê πŸ∂¯¥œ¥Ÿ.\n";    // ¿Á∞Ì∏¶ 0¿Ã«œ ∂«¥¬ πÆ¿⁄ø≠∑Œ «ﬂ¿ª Ω√ ø¿∑˘∏ﬁΩ√¡ˆ
+                        cout << "Ï†úÎåÄÎ°ú Ï†ÅÏñ¥Ï£ºÏãúÍ∏∏ Î∞îÎûçÎãàÎã§.\n";    // Ïû¨Í≥†Î•º 0Ïù¥Ìïò ÎòêÎäî Î¨∏ÏûêÏó¥Î°ú ÌñàÏùÑ Ïãú Ïò§Î•òÎ©îÏãúÏßÄ
                     }
                 }
-                cout << "¡§ªÛ¿˚¿∏∑Œ µÓ∑œµ«æ˙Ω¿¥œ¥Ÿ.\n" << endl;
+                cout << "Ï†ïÏÉÅÏ†ÅÏúºÎ°ú Îì±Î°ùÎêòÏóàÏäµÎãàÎã§.\n" << endl;
                 return;
             }
         }
     }
-    cout << c_name << " ƒ´≈◊∞Ì∏Æ¥¬ µÓ∑œµ«æÓ ¿÷¡ˆ æ Ω¿¥œ¥Ÿ.\n" << endl;
+    cout << c_name << " Ïπ¥ÌÖåÍ≥†Î¶¨Îäî Îì±Î°ùÎêòÏñ¥ ÏûàÏßÄ ÏïäÏäµÎãàÎã§.\n" << endl;
 }
 int Manager::printItemlist(ItemNode* ptr) {
     int no = 0;
     while (ptr != nullptr)
     {
-        cout << no + 1 << ". " << ptr->data->getItem_n() << " / " << ptr->data->getItem_p() << "ø¯"
-            << " / " << ptr->data->getItem_a() << "∞≥" << " / ¿Ã∫•∆Æø©∫Œ : " << ptr->data->getOption() << endl;
+        cout << no + 1 << ". " << ptr->data->getItem_n() << " / " << ptr->data->getItem_p() << "Ïõê"
+            << " / " << ptr->data->getItem_a() << "Í∞ú" << " / Ïù¥Î≤§Ìä∏Ïó¨Î∂Ä : " << ptr->data->getOption() << endl;
         no++;
         ptr = ptr->next;
     }
     return no;
 }
 void Manager::showItems() {
-    cout << "ƒ´≈◊∞Ì∏Æ : ";
+    cout << "Ïπ¥ÌÖåÍ≥†Î¶¨ : ";
     cin >> type;
     if (type == "all")
     {
         for (int i = 0; i < category_c; i++)
         {
             cout << "[" << category[i].category_n << "]" << endl;
-            if (category[i].head != nullptr)    // µÓ∑œµ» ªÛ«∞¿Ã ¿÷¥Ÿ∏È
+            if (category[i].head != nullptr)    // Îì±Î°ùÎêú ÏÉÅÌíàÏù¥ ÏûàÎã§Î©¥
             {
                 int num = printItemlist(category[i].head);
-                cout << "ªÛ«∞ ¡æ∑˘ : " << num << endl << endl;
+                cout << "ÏÉÅÌíà Ï¢ÖÎ•ò : " << num << endl << endl;
             }
             else
-                cout << "ªÛ«∞ ¡æ∑˘ : 0\n" << endl;
+                cout << "ÏÉÅÌíà Ï¢ÖÎ•ò : 0\n" << endl;
         }
     }
     else
     {
-        bool found = false; // ¿‘∑¬«— ƒ´µ•∞Ì∏Æ∞° µÓ∑œµ«æ˙¥¬ æ∆¥—¡ˆ √º≈©«œ¥¬ ∫Øºˆ
+        bool found = false; // ÏûÖÎ†•Ìïú Ïπ¥Îç∞Í≥†Î¶¨Í∞Ä Îì±Î°ùÎêòÏóàÎäî ÏïÑÎãåÏßÄ Ï≤¥ÌÅ¨ÌïòÎäî Î≥ÄÏàò
         for (int i = 0; i < category_c; i++)
         {
             if (category[i].category_n == type)
             {
                 cout << "[" << category[i].category_n << "]" << endl;
-                if (category[i].head != nullptr)    // µÓ∑œµ» ªÛ«∞¿Ã ¿÷¥Ÿ∏È
+                if (category[i].head != nullptr)    // Îì±Î°ùÎêú ÏÉÅÌíàÏù¥ ÏûàÎã§Î©¥
                 {
                     int num = printItemlist(category[i].head);
-                    cout << "ªÛ«∞ ¡æ∑˘ : " << num << endl << endl;
+                    cout << "ÏÉÅÌíà Ï¢ÖÎ•ò : " << num << endl << endl;
                 }
                 else
-                    cout << "ªÛ«∞ ¡æ∑˘ : 0\n" << endl;
-                found = true;  // µÓ∑œµ» ƒ´µ•∞Ì∏Æ¿Ãπ«∑Œ true∑Œ ∫Ø∞Ê
+                    cout << "ÏÉÅÌíà Ï¢ÖÎ•ò : 0\n" << endl;
+                found = true;  // Îì±Î°ùÎêú Ïπ¥Îç∞Í≥†Î¶¨Ïù¥ÎØÄÎ°ú trueÎ°ú Î≥ÄÍ≤Ω
                 break;
             }
         }
         if (!found)
-            cout << type << " ƒ´≈◊∞Ì∏Æ¥¬ µÓ∑œµ«æÓ ¿÷¡ˆ æ Ω¿¥œ¥Ÿ. \n" << endl;
+            cout << type << " Ïπ¥ÌÖåÍ≥†Î¶¨Îäî Îì±Î°ùÎêòÏñ¥ ÏûàÏßÄ ÏïäÏäµÎãàÎã§. \n" << endl;
     }
 }
 void Manager::sell() {
-    cout << "ƒ´≈◊∞Ì∏Æ : ";
+    cout << "Ïπ¥ÌÖåÍ≥†Î¶¨ : ";
     cin >> type;
     if (type == "charge")
     {
         while (true)
         {
-            cout << "æÛ∏∂≥™ √Ê¿¸«œΩ√∞⁄Ω¿¥œ±Ó?(¥‹¿ß: ø¯) ";
+            cout << "ÏñºÎßàÎÇò Ï∂©Ï†ÑÌïòÏãúÍ≤†ÏäµÎãàÍπå?(Îã®ÏúÑ: Ïõê) ";
             int money;
             cin >> money;
             if (money > 0)
             {
                 i_data.setCash(money);
-                cout << "√Ê¿¸¿Ã øœ∑·µ«æ˙Ω¿¥œ¥Ÿ.\n" << endl;
+                cout << "Ï∂©Ï†ÑÏù¥ ÏôÑÎ£åÎêòÏóàÏäµÎãàÎã§.\n" << endl;
                 break;
             }
             else
             {
                 cin.clear();
                 cin.ignore(1000, '\n');
-                cout << "¡¶¥Î∑Œ ¿˚æÓ¡÷Ω√±Ê πŸ∂¯¥œ¥Ÿ.\n";    // ∞°∞›¿ª 0¿Ã«œ ∂«¥¬ πÆ¿⁄ø≠∑Œ «ﬂ¿ª Ω√ ø¿∑˘∏ﬁΩ√¡ˆ
+                cout << "Ï†úÎåÄÎ°ú Ï†ÅÏñ¥Ï£ºÏãúÍ∏∏ Î∞îÎûçÎãàÎã§.\n";    // Í∞ÄÍ≤©ÏùÑ 0Ïù¥Ìïò ÎòêÎäî Î¨∏ÏûêÏó¥Î°ú ÌñàÏùÑ Ïãú Ïò§Î•òÎ©îÏãúÏßÄ
             }
         }
     }
@@ -308,38 +307,38 @@ void Manager::sell() {
     {
         fstream myreceipt;
         myreceipt.open("receipt.txt", ios::out | ios::app);
-        bool found2 = false; // ¿‘∑¬«— ƒ´µ•∞Ì∏Æ∞° µÓ∑œµ«æ˙¥¬ æ∆¥—¡ˆ √º≈©«œ¥¬ ∫Øºˆ
+        bool found2 = false; // ÏûÖÎ†•Ìïú Ïπ¥Îç∞Í≥†Î¶¨Í∞Ä Îì±Î°ùÎêòÏóàÎäî ÏïÑÎãåÏßÄ Ï≤¥ÌÅ¨ÌïòÎäî Î≥ÄÏàò
         for (int i = 0; i < category_c; i++)
         {
             if (category[i].category_n == type)
             {
                 while (true)
                 {
-                    if (category[i].head != nullptr)    // µÓ∑œµ» ªÛ«∞¿Ã ¿÷¥Ÿ∏È
+                    if (category[i].head != nullptr)    // Îì±Î°ùÎêú ÏÉÅÌíàÏù¥ ÏûàÎã§Î©¥
                     {
-                        cout << "π´æ˘¿ª ∆ƒΩ√∞⁄Ω¿¥œ±Ó? ";
+                        cout << "Î¨¥ÏóáÏùÑ ÌååÏãúÍ≤†ÏäµÎãàÍπå? ";
                         string name;
                         cin >> name;
-                        ItemNode* ptr = category[i].head;    // ƒ´≈◊∞Ì∏Æ ≥ªø°º≠ ∞∞¿∫ ¿Ã∏ß¿« ªÛ«∞¿ª √£±‚ ¿ß«— ∫Øºˆ
+                        ItemNode* ptr = category[i].head;    // Ïπ¥ÌÖåÍ≥†Î¶¨ ÎÇ¥ÏóêÏÑú Í∞ôÏùÄ Ïù¥Î¶ÑÏùò ÏÉÅÌíàÏùÑ Ï∞æÍ∏∞ ÏúÑÌïú Î≥ÄÏàò
                         bool tf = true;
-                        while (ptr != nullptr)  // ªÛ«∞ ¿Ã∏ß¿Ã ∞∞¿∫ ∞Õ¿Ã ¿÷¥¬¡ˆ »Æ¿Œ«ÿ¡÷¥¬ ¿€æ˜
+                        while (ptr != nullptr)  // ÏÉÅÌíà Ïù¥Î¶ÑÏù¥ Í∞ôÏùÄ Í≤ÉÏù¥ ÏûàÎäîÏßÄ ÌôïÏù∏Ìï¥Ï£ºÎäî ÏûëÏóÖ
                         {
                             if (ptr->data->getItem_n() == name)
                             {
                                 if (ptr->data->getItem_a() == 0)
                                 {
-                                    cout << "¿Á∞Ì∞° æ¯Ω¿¥œ¥Ÿ. ªÛ«∞µÓ∑œ¿ª ¿ÃøÎ«ÿ ¿Á∞Ì∏¶ √ﬂ∞°«ÿ¡÷ººø‰.\n";
+                                    cout << "Ïû¨Í≥†Í∞Ä ÏóÜÏäµÎãàÎã§. ÏÉÅÌíàÎì±Î°ùÏùÑ Ïù¥Ïö©Ìï¥ Ïû¨Í≥†Î•º Ï∂îÍ∞ÄÌï¥Ï£ºÏÑ∏Ïöî.\n";
                                     tf = !tf;
                                     break;
                                 }
                                 while (true)
                                 {
-                                    cout << "æÛ∏∂≥™ ∆ƒΩ√∞⁄Ω¿¥œ±Ó? ";
+                                    cout << "ÏñºÎßàÎÇò ÌååÏãúÍ≤†ÏäµÎãàÍπå? ";
                                     int amount;
                                     cin >> amount;
                                     auto temp = ptr->data->getItem_a() - amount;
                                     if ((temp < 0) && (amount > 0))
-                                        cout << "¿Á∞Ì∞° æ¯Ω¿¥œ¥Ÿ.\n";
+                                        cout << "Ïû¨Í≥†Í∞Ä ÏóÜÏäµÎãàÎã§.\n";
                                     else if ((temp >= 0) && (amount > 0))
                                     {
                                         ptr->data->setSellitem_a(amount);
@@ -347,21 +346,21 @@ void Manager::sell() {
                                         price = ptr->data->getItem_p() * amount;
                                         while (true)
                                         {
-                                            cout << "ƒ´µÂ¿Œ∞°ø‰, «ˆ±›¿Œ∞°ø‰, ±‚«¡∆ºƒ‹¿Œ∞°ø‰?(ƒ´µÂ¥¬ 1, «ˆ±›¿∫ 2, ±‚«¡∆ºƒ‹¿∫ 3) ";
+                                            cout << "Ïπ¥ÎìúÏù∏Í∞ÄÏöî, ÌòÑÍ∏àÏù∏Í∞ÄÏöî, Í∏∞ÌîÑÌã∞ÏΩòÏù∏Í∞ÄÏöî?(Ïπ¥ÎìúÎäî 1, ÌòÑÍ∏àÏùÄ 2, Í∏∞ÌîÑÌã∞ÏΩòÏùÄ 3) ";
                                             int op;
                                             cin >> op;
                                             if (op == 1)
                                             {
                                                 while (true)
                                                 {
-                                                    cout << "≈ÎΩ≈ªÁ«“¿Œ¿ª «œΩ√∞⁄Ω¿¥œ±Ó?(y/Y or n/N) ";
+                                                    cout << "ÌÜµÏã†ÏÇ¨Ìï†Ïù∏ÏùÑ ÌïòÏãúÍ≤†ÏäµÎãàÍπå?(y/Y or n/N) ";
                                                     char op2;
                                                     cin >> op2;
                                                     if (op2 == 'y' || op2 == 'Y')
                                                     {
-                                                        if ((type == "√ ƒ›∏¥" && i_data.getMonth() == 2 && i_data.getDay() == 14) ||
-                                                            (type == "ªÁ≈¡" && i_data.getMonth() == 3 && i_data.getDay() == 14) ||
-                                                            (type == "ª©ª©∑Œ" && i_data.getMonth() == 11 && i_data.getDay() == 11))
+                                                        if ((type == "Ï¥àÏΩúÎ¶ø" && i_data.getMonth() == 2 && i_data.getDay() == 14) ||
+                                                            (type == "ÏÇ¨ÌÉï" && i_data.getMonth() == 3 && i_data.getDay() == 14) ||
+                                                            (type == "ÎπºÎπºÎ°ú" && i_data.getMonth() == 11 && i_data.getDay() == 11))
                                                         {
                                                             price = price - price * 0.45;
                                                             break;
@@ -374,9 +373,9 @@ void Manager::sell() {
                                                     }
                                                     else if (op2 == 'n' || op2 == 'N')
                                                     {
-                                                        if ((type == "√ ƒ›∏¥" && i_data.getMonth() == 2 && i_data.getDay() == 14) ||
-                                                            (type == "ªÁ≈¡" && i_data.getMonth() == 3 && i_data.getDay() == 14) ||
-                                                            (type == "ª©ª©∑Œ" && i_data.getMonth() == 11 && i_data.getDay() == 11))
+                                                        if ((type == "Ï¥àÏΩúÎ¶ø" && i_data.getMonth() == 2 && i_data.getDay() == 14) ||
+                                                            (type == "ÏÇ¨ÌÉï" && i_data.getMonth() == 3 && i_data.getDay() == 14) ||
+                                                            (type == "ÎπºÎπºÎ°ú" && i_data.getMonth() == 11 && i_data.getDay() == 11))
                                                         {
                                                             price = price - price * 0.4;
                                                             break;
@@ -391,12 +390,12 @@ void Manager::sell() {
                                                     {
                                                         cin.clear();
                                                         cin.ignore(1000, '\n');
-                                                        cout << "¡¶¥Î∑Œ ¿˚æÓ¡÷Ω√±Ê πŸ∂¯¥œ¥Ÿ.\n";    // ø¿∑˘∏ﬁΩ√¡ˆ
+                                                        cout << "Ï†úÎåÄÎ°ú Ï†ÅÏñ¥Ï£ºÏãúÍ∏∏ Î∞îÎûçÎãàÎã§.\n";    // Ïò§Î•òÎ©îÏãúÏßÄ
                                                     }
                                                 }
                                                 i_data.setCard(price);
-                                                myreceipt << "ªÛ«∞∏Ì: " + name << endl << "∆«∏≈∑Æ: " + to_string(amount)
-                                                    + "∞≥\n∆«∏≈«— ±›æ◊: " + to_string(price) + "ø¯\n∞·¡¶ºˆ¥‹: ƒ´µÂ\n"
+                                                myreceipt << "ÏÉÅÌíàÎ™Ö: " + name << endl << "ÌåêÎß§Îüâ: " + to_string(amount)
+                                                    + "Í∞ú\nÌåêÎß§Ìïú Í∏àÏï°: " + to_string(price) + "Ïõê\nÍ≤∞Ï†úÏàòÎã®: Ïπ¥Îìú\n"
                                                     + "2020." + to_string(i_data.getMonth()) + "." << i_data.getDay()
                                                     << endl << "\n-------------------------\n\n";
                                                 break;
@@ -405,14 +404,14 @@ void Manager::sell() {
                                             {
                                                 while (true)
                                                 {
-                                                    cout << "≈ÎΩ≈ªÁ«“¿Œ¿ª «œΩ√∞⁄Ω¿¥œ±Ó?(y/Y or n/N) ";
+                                                    cout << "ÌÜµÏã†ÏÇ¨Ìï†Ïù∏ÏùÑ ÌïòÏãúÍ≤†ÏäµÎãàÍπå?(y/Y or n/N) ";
                                                     char op2;
                                                     cin >> op2;
                                                     if (op2 == 'y' || op2 == 'Y')
                                                     {
-                                                        if ((type == "√ ƒ›∏¥" && i_data.getMonth() == 2 && i_data.getDay() == 14) ||
-                                                            (type == "ªÁ≈¡" && i_data.getMonth() == 3 && i_data.getDay() == 14) ||
-                                                            (type == "ª©ª©∑Œ" && i_data.getMonth() == 11 && i_data.getDay() == 11))
+                                                        if ((type == "Ï¥àÏΩúÎ¶ø" && i_data.getMonth() == 2 && i_data.getDay() == 14) ||
+                                                            (type == "ÏÇ¨ÌÉï" && i_data.getMonth() == 3 && i_data.getDay() == 14) ||
+                                                            (type == "ÎπºÎπºÎ°ú" && i_data.getMonth() == 11 && i_data.getDay() == 11))
                                                         {
                                                             price = price - price * 0.35;
                                                             break;
@@ -425,9 +424,9 @@ void Manager::sell() {
                                                     }
                                                     else if (op2 == 'n' || op2 == 'N')
                                                     {
-                                                        if ((type == "√ ƒ›∏¥" && i_data.getMonth() == 2 && i_data.getDay() == 14) ||
-                                                            (type == "ªÁ≈¡" && i_data.getMonth() == 3 && i_data.getDay() == 14) ||
-                                                            (type == "ª©ª©∑Œ" && i_data.getMonth() == 11 && i_data.getDay() == 11))
+                                                        if ((type == "Ï¥àÏΩúÎ¶ø" && i_data.getMonth() == 2 && i_data.getDay() == 14) ||
+                                                            (type == "ÏÇ¨ÌÉï" && i_data.getMonth() == 3 && i_data.getDay() == 14) ||
+                                                            (type == "ÎπºÎπºÎ°ú" && i_data.getMonth() == 11 && i_data.getDay() == 11))
                                                         {
                                                             price = price - price * 0.3;
                                                             break;
@@ -439,12 +438,12 @@ void Manager::sell() {
                                                     {
                                                         cin.clear();
                                                         cin.ignore(1000, '\n');
-                                                        cout << "¡¶¥Î∑Œ ¿˚æÓ¡÷Ω√±Ê πŸ∂¯¥œ¥Ÿ.\n";    // ø¿∑˘∏ﬁΩ√¡ˆ
+                                                        cout << "Ï†úÎåÄÎ°ú Ï†ÅÏñ¥Ï£ºÏãúÍ∏∏ Î∞îÎûçÎãàÎã§.\n";    // Ïò§Î•òÎ©îÏãúÏßÄ
                                                     }
                                                 }
                                                 i_data.setCash(price);
-                                                myreceipt << "ªÛ«∞∏Ì: " + name << endl << "∆«∏≈∑Æ: " + to_string(amount)
-                                                    + "∞≥\n∆«∏≈«— ±›æ◊: " + to_string(price) + "ø¯\n∞·¡¶ºˆ¥‹: «ˆ±›\n"
+                                                myreceipt << "ÏÉÅÌíàÎ™Ö: " + name << endl << "ÌåêÎß§Îüâ: " + to_string(amount)
+                                                    + "Í∞ú\nÌåêÎß§Ìïú Í∏àÏï°: " + to_string(price) + "Ïõê\nÍ≤∞Ï†úÏàòÎã®: ÌòÑÍ∏à\n"
                                                     + "2020." + to_string(i_data.getMonth()) + "." << i_data.getDay()
                                                     << endl << "\n-------------------------\n\n";
                                                 break;
@@ -452,8 +451,8 @@ void Manager::sell() {
                                             else if (op == 3)
                                             {
                                                 i_data.setCard(price);
-                                                myreceipt << "ªÛ«∞∏Ì: " + name << endl << "∆«∏≈∑Æ: " + to_string(amount)
-                                                    + "∞≥\n∆«∏≈«— ±›æ◊: " + to_string(price) + "ø¯\n∞·¡¶ºˆ¥‹: ±‚«¡∆ºƒ‹\n"
+                                                myreceipt << "ÏÉÅÌíàÎ™Ö: " + name << endl << "ÌåêÎß§Îüâ: " + to_string(amount)
+                                                    + "Í∞ú\nÌåêÎß§Ìïú Í∏àÏï°: " + to_string(price) + "Ïõê\nÍ≤∞Ï†úÏàòÎã®: Í∏∞ÌîÑÌã∞ÏΩò\n"
                                                     + "2020." + to_string(i_data.getMonth()) + "." << i_data.getDay()
                                                     << endl << "\n-------------------------\n\n";
                                                 break;
@@ -462,17 +461,17 @@ void Manager::sell() {
                                             {
                                                 cin.clear();
                                                 cin.ignore(1000, '\n');
-                                                cout << "¡¶¥Î∑Œ ¿˚æÓ¡÷Ω√±Ê πŸ∂¯¥œ¥Ÿ.\n";    // ø¿∑˘∏ﬁΩ√¡ˆ
+                                                cout << "Ï†úÎåÄÎ°ú Ï†ÅÏñ¥Ï£ºÏãúÍ∏∏ Î∞îÎûçÎãàÎã§.\n";    // Ïò§Î•òÎ©îÏãúÏßÄ
                                             }
                                         }
-                                        cout << "∞°∞›¿∫ " + to_string(price) + "ø¯¿‘¥œ¥Ÿ.\n";
+                                        cout << "Í∞ÄÍ≤©ÏùÄ " + to_string(price) + "ÏõêÏûÖÎãàÎã§.\n";
                                         break;
                                     }
                                     else
                                     {
                                         cin.clear();
                                         cin.ignore(1000, '\n');
-                                        cout << "¡¶¥Î∑Œ ¿˚æÓ¡÷Ω√±Ê πŸ∂¯¥œ¥Ÿ.\n";    // ø¿∑˘∏ﬁΩ√¡ˆ
+                                        cout << "Ï†úÎåÄÎ°ú Ï†ÅÏñ¥Ï£ºÏãúÍ∏∏ Î∞îÎûçÎãàÎã§.\n";    // Ïò§Î•òÎ©îÏãúÏßÄ
                                     }
                                 }
                                 break;
@@ -480,13 +479,13 @@ void Manager::sell() {
                             ptr = ptr->next;
                         }
                         if (ptr == nullptr)
-                            cout << "µÓ∑œµ«¡ˆ æ ¿∫ ªÛ«∞¿‘¥œ¥Ÿ.\n";
+                            cout << "Îì±Î°ùÎêòÏßÄ ÏïäÏùÄ ÏÉÅÌíàÏûÖÎãàÎã§.\n";
                         else if (tf == false)
                             break;
                         else
                         {
-                            cout << "¡§ªÛ¿˚¿∏∑Œ ∆«∏≈µ«æ˙Ω¿¥œ¥Ÿ.\n";
-                            cout << "¥Ÿ∏• ªÛ«∞¿ª ∆«∏≈«œΩ√∞⁄Ω¿¥œ±Ó?(y/Y or n/N) ";
+                            cout << "Ï†ïÏÉÅÏ†ÅÏúºÎ°ú ÌåêÎß§ÎêòÏóàÏäµÎãàÎã§.\n";
+                            cout << "Îã§Î•∏ ÏÉÅÌíàÏùÑ ÌåêÎß§ÌïòÏãúÍ≤†ÏäµÎãàÍπå?(y/Y or n/N) ";
                             string op;
                             cin >> op;
                             if ((op == "y") || (op == "Y"))
@@ -498,32 +497,32 @@ void Manager::sell() {
                             }
                             else
                             {
-                                cout << "∆«∏≈∏¶ ¡æ∑·«œ∞⁄Ω¿¥œ¥Ÿ.\n" << endl;
+                                cout << "ÌåêÎß§Î•º Ï¢ÖÎ£åÌïòÍ≤†ÏäµÎãàÎã§.\n" << endl;
                                 break;
                             }
                         }
                     }
                     else
                     {
-                        cout << "∏’¿˙ ªÛ«∞¿ª µÓ∑œ«œΩ Ω√ø¿.\n" << endl;
+                        cout << "Î®ºÏ†Ä ÏÉÅÌíàÏùÑ Îì±Î°ùÌïòÏã≠ÏãúÏò§.\n" << endl;
                         break;
                     }
                 }
                 myreceipt.close();
-                found2 = true;  // µÓ∑œµ» ƒ´µ•∞Ì∏Æ¿Ãπ«∑Œ true∑Œ ∫Ø∞Ê
+                found2 = true;  // Îì±Î°ùÎêú Ïπ¥Îç∞Í≥†Î¶¨Ïù¥ÎØÄÎ°ú trueÎ°ú Î≥ÄÍ≤Ω
                 break;
             }
         }
         if (!found2)
-            cout << type << " ƒ´≈◊∞Ì∏Æ¥¬ µÓ∑œµ«æÓ ¿÷¡ˆ æ Ω¿¥œ¥Ÿ. \n" << endl;
+            cout << type << " Ïπ¥ÌÖåÍ≥†Î¶¨Îäî Îì±Î°ùÎêòÏñ¥ ÏûàÏßÄ ÏïäÏäµÎãàÎã§. \n" << endl;
     }
 }
 void Manager::deposit() {
     int money;
     while (true)
     {
-        cout << "«ˆ¿Á pos±‚¿« ±›æ◊ : " << i_data.getCash() << endl;
-        cout << "æÛ∏∂∏¶ ¿‘±›«œΩ√∞⁄Ω¿¥œ±Ó?(¥‹¿ß: 10∏∏ø¯) ";
+        cout << "ÌòÑÏû¨ posÍ∏∞Ïùò Í∏àÏï° : " << i_data.getCash() << endl;
+        cout << "ÏñºÎßàÎ•º ÏûÖÍ∏àÌïòÏãúÍ≤†ÏäµÎãàÍπå?(Îã®ÏúÑ: 10ÎßåÏõê) ";
         cin >> money;
         if (money > 0)
         {
@@ -534,7 +533,7 @@ void Manager::deposit() {
             }
             else
             {
-                cout << "¿‹æ◊¿Ã ∫Œ¡∑«’¥œ¥Ÿ.\n";
+                cout << "ÏûîÏï°Ïù¥ Î∂ÄÏ°±Ìï©ÎãàÎã§.\n";
                 money = 0;
             }
             break;
@@ -543,11 +542,11 @@ void Manager::deposit() {
         {
             cin.clear();
             cin.ignore(1000, '\n');
-            cout << "¡¶¥Î∑Œ ¿˚æÓ¡÷Ω√±Ê πŸ∂¯¥œ¥Ÿ.\n";    // ø¿∑˘∏ﬁΩ√¡ˆ
+            cout << "Ï†úÎåÄÎ°ú Ï†ÅÏñ¥Ï£ºÏãúÍ∏∏ Î∞îÎûçÎãàÎã§.\n";    // Ïò§Î•òÎ©îÏãúÏßÄ
         }
     }
-    cout << "±›∞Ìø° " << money * 100000 << "¿ª ¿‘±›«œø©\n";
-    cout << i_data.getSafe() << "ø¯ ¿÷Ω¿¥œ¥Ÿ.\n" << endl;
+    cout << "Í∏àÍ≥†Ïóê " << money * 100000 << "ÏùÑ ÏûÖÍ∏àÌïòÏó¨\n";
+    cout << i_data.getSafe() << "Ïõê ÏûàÏäµÎãàÎã§.\n" << endl;
 }
 bool Manager::receipt(bool tf) {
     cout << endl;
@@ -555,7 +554,7 @@ bool Manager::receipt(bool tf) {
     myreceipt.open("receipt.txt", ios::in);
     if (!myreceipt.is_open())
     {
-        cout << "æ∆¡˜ ∆«∏≈∏¶ æ»«ﬂΩ¿¥œ¥Ÿ.\n" << endl;
+        cout << "ÏïÑÏßÅ ÌåêÎß§Î•º ÏïàÌñàÏäµÎãàÎã§.\n" << endl;
         tf = !tf;
         return tf;
     }
@@ -568,9 +567,9 @@ bool Manager::receipt(bool tf) {
     myreceipt.close();
 }
 void Manager::money_list() {
-    cout << "ƒ´µÂ∞·¡¶≥ªø™: " << i_data.getCard() << "ø¯" << endl;
-    cout << "«ˆ±›: " << i_data.getCash() << "ø¯" << endl;
-    cout << "√—∞·ªÍ: " << i_data.getCard() + i_data.getCash() + i_data.getSafe() - 100000 << "ø¯\n" << endl;
+    cout << "Ïπ¥ÎìúÍ≤∞Ï†úÎÇ¥Ïó≠: " << i_data.getCard() << "Ïõê" << endl;
+    cout << "ÌòÑÍ∏à: " << i_data.getCash() << "Ïõê" << endl;
+    cout << "Ï¥ùÍ≤∞ÏÇ∞: " << i_data.getCard() + i_data.getCash() + i_data.getSafe() - 100000 << "Ïõê\n" << endl;
 }
 void Manager::today() {
     int month, day;
@@ -595,13 +594,13 @@ void Manager::today() {
     i_data.setDay(11);*/
 }
 void Manager::today_event() {
-    cout << "ø¿¥√¿∫ 2020≥‚ " << i_data.getMonth() << "ø˘ " << i_data.getDay() << "¿œ¿Ãπ«∑Œ\n";
+    cout << "Ïò§ÎäòÏùÄ 2020ÎÖÑ " << i_data.getMonth() << "Ïõî " << i_data.getDay() << "ÏùºÏù¥ÎØÄÎ°ú\n";
     if (i_data.getMonth() == 2 && i_data.getDay() == 14)
-        cout << "πﬂ∑ª≈∏¿Œµ•¿Ã∑Œ √ ƒ›∏¥∑˘∞° 30%«“¿Œ¿‘¥œ¥Ÿ!\n" << endl;
+        cout << "Î∞úÎ†åÌÉÄÏù∏Îç∞Ïù¥Î°ú Ï¥àÏΩúÎ¶øÎ•òÍ∞Ä 30%Ìï†Ïù∏ÏûÖÎãàÎã§!\n" << endl;
     else if (i_data.getMonth() == 3 && i_data.getDay() == 14)
-        cout << "»≠¿Ã∆Æµ•¿Ã∑Œ ªÁ≈¡∑˘∞° 30%«“¿Œ¿‘¥œ¥Ÿ!\n" << endl;
+        cout << "ÌôîÏù¥Ìä∏Îç∞Ïù¥Î°ú ÏÇ¨ÌÉïÎ•òÍ∞Ä 30%Ìï†Ïù∏ÏûÖÎãàÎã§!\n" << endl;
     else if (i_data.getMonth() == 11 && i_data.getDay() == 11)
-        cout << "ª©ª©∑Œµ•¿Ã∑Œ ª©ª©∑Œ∑˘∞° 30%«“¿Œ¿‘¥œ¥Ÿ!\n" << endl;
+        cout << "ÎπºÎπºÎ°úÎç∞Ïù¥Î°ú ÎπºÎπºÎ°úÎ•òÍ∞Ä 30%Ìï†Ïù∏ÏûÖÎãàÎã§!\n" << endl;
     else
-        cout << "ø¿¥√¿« ¿Ã∫•∆Æ¥¬ æ¯Ω¿¥œ¥Ÿ!\n" << endl;
+        cout << "Ïò§ÎäòÏùò Ïù¥Î≤§Ìä∏Îäî ÏóÜÏäµÎãàÎã§!\n" << endl;
 }
